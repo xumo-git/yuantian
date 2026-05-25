@@ -1,1 +1,156 @@
-*{margin:0;padding:0}body{font-family:sans-serif;background:#0f0f0f;color:#e0ddd5;line-height:1.9;padding:20px}a{color:#c0394a}.site-header{max-width:720px;margin:40px auto}.chapter-list{max-width:720px;margin:0 auto;list-style:none}.chapter-list li{padding:10px 0;border-bottom:1px solid #222}.chapter-list a{color:#e0ddd5;font-size:17px}.chapter{max-width:720px;margin:0 auto}.chapter h1{font-size:24px;margin:30px 0}.chapter p{margin:1.2em 0}.site-footer{max-width:720px;margin:60px auto;text-align:center;color:#555}
+/* 蕊 · 小说站 */
+:root {
+  --bg: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --text: #e0ddd5;
+  --text-dim: #8a8780;
+  --accent: #8b2332;
+  --accent-light: #c0394a;
+  --border: #2a2a2a;
+  --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+  font-size: 17px;
+  padding: 20px;
+}
+a { color: var(--accent-light); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+.site-header {
+  max-width: 720px;
+  margin: 40px auto 30px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+.site-header h1 {
+  font-size: 28px;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+.site-header .subtitle {
+  color: var(--text-dim);
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+/* Chapter list */
+.chapter-list {
+  max-width: 720px;
+  margin: 0 auto;
+  list-style: none;
+}
+.chapter-list li {
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+}
+.chapter-list li a {
+  display: block;
+  font-size: 17px;
+  color: var(--text);
+  transition: color .2s;
+}
+.chapter-list li a:hover {
+  color: var(--accent-light);
+  text-decoration: none;
+}
+.chapter-list .meta {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* Chapter page */
+.chapter {
+  max-width: 720px;
+  margin: 0 auto;
+}
+.chapter h1 {
+  font-size: 24px;
+  font-weight: 400;
+  margin: 30px 0 10px;
+  letter-spacing: 1px;
+}
+.chapter .chapter-meta {
+  color: var(--text-dim);
+  font-size: 13px;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border);
+}
+.chapter p {
+  margin: 1.2em 0;
+}
+.chapter em {
+  color: var(--text-dim);
+}
+.chapter strong {
+  color: var(--accent-light);
+  font-weight: 500;
+}
+.chapter hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+/* Back link */
+.back-link {
+  display: block;
+  max-width: 720px;
+  margin: 30px auto;
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+/* Footer */
+.site-footer {
+  max-width: 720px;
+  margin: 60px auto 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 13px;
+}
+
+/* Fun fact box */
+.fun-fact {
+  background: var(--bg-card);
+  border-left: 3px solid var(--accent);
+  padding: 15px 18px;
+  margin: 1.5em 0;
+  border-radius: 0 4px 4px 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-dim);
+}
+.fun-fact strong {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Nav */
+.chapter-nav {
+  display: flex;
+  justify-content: space-between;
+  max-width: 720px;
+  margin: 30px auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+.chapter-nav a {
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body { font-size: 16px; padding: 15px; }
+  .site-header h1 { font-size: 22px; }
+  .chapter h1 { font-size: 20px; }
+}
