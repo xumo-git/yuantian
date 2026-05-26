@@ -38,4 +38,104 @@
 <p>他轻声说：「好。」</p>
 <p>他已经做出决定了。从他说&quot;好&quot;的那一刻起，他就是陈默了。至少，在找到答案之前。</p>
 <p>（第一章完）</p>
-</div><div class=chapter-nav style='max-width:720px;margin:30px auto;display:flex;justify-content:space-between'><span></span><a href=index.html>目录</a></div></body></html>
+</div><div class=chapter-nav style='max-width:720px;margin:30px auto;display:flex;justify-content:space-between'><span></span><a href=index.html>目录</a></div>
+    <div id="tts-bar" style="position:sticky;top:0;background:#f8f9fa;padding:10px;border-bottom:1px solid #ddd;text-align:center;z-index:100;display:none;">
+        <button id="tts-play" style="padding:8px 24px;background:#007aff;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;">▶ 朗读本章</button>
+        <button id="tts-pause" style="padding:8px 24px;background:#ff9500;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;display:none;">⏸ 暂停</button>
+        <button id="tts-stop" style="padding:8px 24px;background:#ff3b30;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;display:none;">⏹ 停止</button>
+        <select id="tts-rate" style="margin-left:10px;padding:6px;border-radius:4px;font-size:14px;">
+            <option value="0.8">慢速</option>
+            <option value="1" selected>正常</option>
+            <option value="1.2">快速</option>
+        </select>
+    </div>
+    <script>
+    (function(){
+        const bar = document.getElementById('tts-bar');
+        const playBtn = document.getElementById('tts-play');
+        const pauseBtn = document.getElementById('tts-pause');
+        const stopBtn = document.getElementById('tts-stop');
+        const rateSelect = document.getElementById('tts-rate');
+        let utterance = null;
+        let isPaused = false;
+        
+        function getText() {
+            const content = document.querySelector('.content') || document.querySelector('body');
+            const clone = content.cloneNode(true);
+            // 移除按钮/脚本/样式
+            clone.querySelectorAll('script,style,button,select,#tts-bar,.footer,.site-footer,.site-header,.chapter-list,.meta').forEach(el => el.remove());
+            let text = clone.textContent || '';
+            // 清理多余空白
+            text = text.replace(/\s+/g, ' ').trim();
+            // 限制长度（避免太长）
+            if (text.length > 50000) text = text.slice(0, 50000);
+            return text;
+        }
+        
+        function speak() {
+            if (utterance) {
+                window.speechSynthesis.cancel();
+            }
+            utterance = new SpeechSynthesisUtterance(getText());
+            utterance.lang = 'zh-CN';
+            utterance.rate = parseFloat(rateSelect.value);
+            
+            // 尝试选一个中文语音
+            const voices = window.speechSynthesis.getVoices();
+            const zhVoice = voices.find(v => v.lang.startsWith('zh'));
+            if (zhVoice) utterance.voice = zhVoice;
+            
+            utterance.onstart = function() {
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'inline-block';
+                stopBtn.style.display = 'inline-block';
+            };
+            utterance.onend = function() {
+                playBtn.style.display = 'inline-block';
+                pauseBtn.style.display = 'none';
+                stopBtn.style.display = 'none';
+                utterance = null;
+            };
+            utterance.onerror = function() {
+                playBtn.style.display = 'inline-block';
+                pauseBtn.style.display = 'none';
+                stopBtn.style.display = 'none';
+            };
+            window.speechSynthesis.speak(utterance);
+        }
+        
+        playBtn.addEventListener('click', function() {
+            if (isPaused && utterance) {
+                window.speechSynthesis.resume();
+                isPaused = false;
+                playBtn.style.display = 'none';
+                pauseBtn.style.display = 'inline-block';
+                return;
+            }
+            speak();
+        });
+        
+        pauseBtn.addEventListener('click', function() {
+            window.speechSynthesis.pause();
+            isPaused = true;
+            pauseBtn.style.display = 'none';
+            playBtn.style.display = 'inline-block';
+            playBtn.textContent = '▶ 继续';
+        });
+        
+        stopBtn.addEventListener('click', function() {
+            window.speechSynthesis.cancel();
+            utterance = null;
+            isPaused = false;
+            playBtn.style.display = 'inline-block';
+            playBtn.textContent = '▶ 朗读本章';
+            pauseBtn.style.display = 'none';
+            stopBtn.style.display = 'none';
+        });
+        
+        // 显示TTS栏
+        bar.style.display = 'block';
+    })();
+    </script>
+
+</body></html>
