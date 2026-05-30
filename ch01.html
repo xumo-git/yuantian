@@ -1,5 +1,45 @@
-<!DOCTYPE html><html lang=zh-CN><head><meta charset=UTF-8><title>袁天罡 · 第一章 · 醒来</title><link rel=stylesheet href=css/style.css></head><body><div style=max-width:720px;margin:20px auto;background:#1a1a1a;border-radius:8px;padding:15px 20px;border-left:3px solid #8b2332><div style=color:#c0394a;font-size:14px;margin-bottom:8px>🎧 听书 - 青年男声</div><audio controls style=width:100% preload=metadata><source src=audio/ch01_full.mp3 type=audio/mpeg></audio></div>
-<div class=chapter><h1>第一章 · 醒来</h1><h1>第一章 · 醒来</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>第一章 · 醒来 · 我真是袁天罡</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="reading-progress"></div>
+
+<nav class="top-nav">
+  <div class="top-nav-inner">
+    <a href="index.html">← 目录</a>
+    <span class="nav-title">我真是袁天罡</span>
+    <div class="reading-controls">
+      <button id="font-dec" title="减小字号">A−</button>
+      <span class="font-size-label" id="font-label">18</span>
+      <button id="font-inc" title="增大字号">A+</button>
+    </div>
+  </div>
+</nav>
+
+<div class="chapter-wrapper">
+  <div class="audio-player">
+    <div class="audio-icon">♪</div>
+    <div class="audio-info">
+      <div class="audio-label">🎧 听书 · 青年男声</div>
+      <audio controls preload="metadata">
+        <source src="audio/ch01_full.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+  </div>
+
+  <div class="chapter-title">
+    <div class="ch-label">— 第一章 —</div>
+    <h1>醒来</h1>
+  </div>
+
+  <div class="chapter-content">
+
 <p>袁天罡醒来的时候，脑袋里有一根针。</p>
 <p>不是比喻。是真的有一根针，从他左眼眶后面斜插进去，钉在颅骨内壁上。他下意识想抬手去按太阳穴——手抬到一半停住了。</p>
 <p>这只手不是他的。</p>
@@ -12,7 +52,9 @@
 <p>袁天罡安静地坐了片刻。一个念头在他脑海里成形，他想了想措辞，然后开口说了一句话。嗓音发涩——这具身体的声带比他原来细，声音偏轻，听起来不像一个六十三岁的老人，像一个没睡醒的年轻人。</p>
 <p>「我死了。又活了。在一个不知道是谁的身体里。」</p>
 <p>他把这句话重复了一遍，确认自己没疯。然后又安静地坐了一会儿，开始翻东西。</p>
+
 <hr />
+
 <p>桌子上有一块黑色的薄片，光滑如镜，嵌在一个同样黑色的壳子里。他拿起来，翻过来看了看背面，没看出是什么材质。他把它翻回正面——拇指无意中按在屏幕下方的一个小圆点上。</p>
 <p>手机震了一下。屏幕亮了。锁屏界面出现了，锁屏图案是一张模糊的晚霞。</p>
 <p>袁天罡盯着那道光看了几秒。他没有意识到自己刚才做了什么——他的拇指自己找到了那个位置，像做过一万次一样自然。他不知道那叫指纹解锁，不知道这具身体的主人每天要按那个位置几十次。他只是觉得：这东西好像认得他的手。</p>
@@ -36,106 +78,117 @@
 <p>他放下手机。窗外的深圳正在入夜，那些闪着灯光的玻璃高楼在暗下来的天空里亮起来，像一千三百年前他看过的星图。</p>
 <p>他坐在黑暗里，手里攥着一枚不属于这个时代的铜钱，用一具死而复生的身体，看着一座他从未见过的城市。</p>
 <p>他轻声说：「好。」</p>
-<p>他已经做出决定了。从他说&quot;好&quot;的那一刻起，他就是陈默了。至少，在找到答案之前。</p>
-<p>（第一章完）</p>
-</div><div class=chapter-nav style='max-width:720px;margin:30px auto;display:flex;justify-content:space-between'><span></span><a href=index.html>目录</a></div>
-    <div id="tts-bar" style="position:sticky;top:0;background:#f8f9fa;padding:10px;border-bottom:1px solid #ddd;text-align:center;z-index:100;display:none;">
-        <button id="tts-play" style="padding:8px 24px;background:#007aff;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;">▶ 朗读本章</button>
-        <button id="tts-pause" style="padding:8px 24px;background:#ff9500;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;display:none;">⏸ 暂停</button>
-        <button id="tts-stop" style="padding:8px 24px;background:#ff3b30;color:white;border:none;border-radius:6px;cursor:pointer;font-size:16px;display:none;">⏹ 停止</button>
-        <select id="tts-rate" style="margin-left:10px;padding:6px;border-radius:4px;font-size:14px;">
-            <option value="0.8">慢速</option>
-            <option value="1" selected>正常</option>
-            <option value="1.2">快速</option>
-        </select>
-    </div>
-    <script>
-    (function(){
-        const bar = document.getElementById('tts-bar');
-        const playBtn = document.getElementById('tts-play');
-        const pauseBtn = document.getElementById('tts-pause');
-        const stopBtn = document.getElementById('tts-stop');
-        const rateSelect = document.getElementById('tts-rate');
-        let utterance = null;
-        let isPaused = false;
-        
-        function getText() {
-            const content = document.querySelector('.content') || document.querySelector('body');
-            const clone = content.cloneNode(true);
-            // 移除按钮/脚本/样式
-            clone.querySelectorAll('script,style,button,select,#tts-bar,.footer,.site-footer,.site-header,.chapter-list,.meta').forEach(el => el.remove());
-            let text = clone.textContent || '';
-            // 清理多余空白
-            text = text.replace(/\s+/g, ' ').trim();
-            // 限制长度（避免太长）
-            if (text.length > 50000) text = text.slice(0, 50000);
-            return text;
-        }
-        
-        function speak() {
-            if (utterance) {
-                window.speechSynthesis.cancel();
-            }
-            utterance = new SpeechSynthesisUtterance(getText());
-            utterance.lang = 'zh-CN';
-            utterance.rate = parseFloat(rateSelect.value);
-            
-            // 尝试选一个中文语音
-            const voices = window.speechSynthesis.getVoices();
-            const zhVoice = voices.find(v => v.lang.startsWith('zh'));
-            if (zhVoice) utterance.voice = zhVoice;
-            
-            utterance.onstart = function() {
-                playBtn.style.display = 'none';
-                pauseBtn.style.display = 'inline-block';
-                stopBtn.style.display = 'inline-block';
-            };
-            utterance.onend = function() {
-                playBtn.style.display = 'inline-block';
-                pauseBtn.style.display = 'none';
-                stopBtn.style.display = 'none';
-                utterance = null;
-            };
-            utterance.onerror = function() {
-                playBtn.style.display = 'inline-block';
-                pauseBtn.style.display = 'none';
-                stopBtn.style.display = 'none';
-            };
-            window.speechSynthesis.speak(utterance);
-        }
-        
-        playBtn.addEventListener('click', function() {
-            if (isPaused && utterance) {
-                window.speechSynthesis.resume();
-                isPaused = false;
-                playBtn.style.display = 'none';
-                pauseBtn.style.display = 'inline-block';
-                return;
-            }
-            speak();
-        });
-        
-        pauseBtn.addEventListener('click', function() {
-            window.speechSynthesis.pause();
-            isPaused = true;
-            pauseBtn.style.display = 'none';
-            playBtn.style.display = 'inline-block';
-            playBtn.textContent = '▶ 继续';
-        });
-        
-        stopBtn.addEventListener('click', function() {
-            window.speechSynthesis.cancel();
-            utterance = null;
-            isPaused = false;
-            playBtn.style.display = 'inline-block';
-            playBtn.textContent = '▶ 朗读本章';
-            pauseBtn.style.display = 'none';
-            stopBtn.style.display = 'none';
-        });
-        
-        // 显示TTS栏
-        bar.style.display = 'block';
-    })();
-    </script>
+<p>他已经做出决定了。从他说"好"的那一刻起，他就是陈默了。至少，在找到答案之前。</p>
 
-</body></html>
+  </div>
+
+  <div class="chapter-end">
+    <span class="end-ornament">◆ ◆ ◆</span>
+    第一章完
+  </div>
+
+  <div class="chapter-nav">
+    <span></span>
+    <div class="nav-center"><a href="index.html">☰ 目录</a></div>
+    <a href="ch02.html">第二章 →</a>
+  </div>
+</div>
+
+<div id="tts-bar">
+  <div class="tts-inner">
+    <button id="tts-play">▶ 朗读本章</button>
+    <button id="tts-pause" style="display:none;">⏸ 暂停</button>
+    <button id="tts-stop" style="display:none;">⏹ 停止</button>
+    <select id="tts-rate">
+      <option value="0.8">慢速</option>
+      <option value="1" selected>正常</option>
+      <option value="1.2">快速</option>
+    </select>
+  </div>
+</div>
+
+<footer class="site-footer">我真是袁天罡 · 第一章 · 醒来</footer>
+
+<script>
+// ── 阅读进度条 ──
+(function(){
+  const bar = document.getElementById('reading-progress');
+  window.addEventListener('scroll', function() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    bar.style.width = progress + '%';
+  });
+})();
+
+// ── 字号调节 ──
+(function(){
+  const content = document.querySelector('.chapter-content');
+  const label = document.getElementById('font-label');
+  let size = 18;
+  document.getElementById('font-inc').addEventListener('click', function() {
+    if (size < 24) { size += 1; content.style.fontSize = size + 'px'; label.textContent = size; }
+  });
+  document.getElementById('font-dec').addEventListener('click', function() {
+    if (size > 14) { size -= 1; content.style.fontSize = size + 'px'; label.textContent = size; }
+  });
+})();
+
+// ── TTS 朗读 ──
+(function(){
+  const playBtn = document.getElementById('tts-play');
+  const pauseBtn = document.getElementById('tts-pause');
+  const stopBtn = document.getElementById('tts-stop');
+  const rateSelect = document.getElementById('tts-rate');
+  let utterance = null;
+  let isPaused = false;
+
+  document.getElementById('tts-bar').style.display = 'block';
+
+  function getText() {
+    const content = document.querySelector('.chapter-content');
+    if (!content) return '';
+    const clone = content.cloneNode(true);
+    clone.querySelectorAll('script,style,button,select').forEach(el => el.remove());
+    let text = clone.textContent || '';
+    text = text.replace(/\s+/g, ' ').trim();
+    if (text.length > 50000) text = text.slice(0, 50000);
+    return text;
+  }
+
+  function speak() {
+    if (utterance) window.speechSynthesis.cancel();
+    utterance = new SpeechSynthesisUtterance(getText());
+    utterance.lang = 'zh-CN';
+    utterance.rate = parseFloat(rateSelect.value);
+    const voices = window.speechSynthesis.getVoices();
+    const zhVoice = voices.find(v => v.lang.startsWith('zh'));
+    if (zhVoice) utterance.voice = zhVoice;
+    utterance.onstart = function() {
+      playBtn.style.display = 'none'; pauseBtn.style.display = 'inline-block'; stopBtn.style.display = 'inline-block';
+    };
+    utterance.onend = function() {
+      playBtn.style.display = 'inline-block'; pauseBtn.style.display = 'none'; stopBtn.style.display = 'none'; utterance = null;
+    };
+    utterance.onerror = function() {
+      playBtn.style.display = 'inline-block'; pauseBtn.style.display = 'none'; stopBtn.style.display = 'none';
+    };
+    window.speechSynthesis.speak(utterance);
+  }
+
+  playBtn.addEventListener('click', function() {
+    if (isPaused && utterance) { window.speechSynthesis.resume(); isPaused = false; playBtn.style.display = 'none'; pauseBtn.style.display = 'inline-block'; return; }
+    speak();
+  });
+  pauseBtn.addEventListener('click', function() {
+    window.speechSynthesis.pause(); isPaused = true; pauseBtn.style.display = 'none'; playBtn.style.display = 'inline-block'; playBtn.textContent = '▶ 继续';
+  });
+  stopBtn.addEventListener('click', function() {
+    window.speechSynthesis.cancel(); utterance = null; isPaused = false;
+    playBtn.style.display = 'inline-block'; playBtn.textContent = '▶ 朗读本章'; pauseBtn.style.display = 'none'; stopBtn.style.display = 'none';
+  });
+})();
+</script>
+
+</body>
+</html>
